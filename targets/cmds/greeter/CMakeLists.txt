@@ -4,12 +4,12 @@ project(GreeterStandalone LANGUAGES CXX)
 
 # --- Import tools ----
 
-include(../../cmake/options.cmake)
-include(../../cmake/tools.cmake)
+include(../../../cmake/options.cmake)
+include(../../../cmake/tools.cmake)
 
 # ---- Dependencies ----
 
-include(../../cmake/CPM.cmake)
+include(../../../cmake/CPM.cmake)
 
 CPMAddPackage(
   GITHUB_REPOSITORY jarro2783/cxxopts
@@ -17,11 +17,11 @@ CPMAddPackage(
   OPTIONS "CXXOPTS_BUILD_EXAMPLES NO" "CXXOPTS_BUILD_TESTS NO" "CXXOPTS_ENABLE_INSTALL YES"
 )
 
-CPMAddPackage(NAME Greeter SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/../lib)
+CPMAddPackage(NAME Greeter SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/../../libs/greeter)
 
 # ---- Create standalone executable ----
 
-file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../../src/bin/*.cpp)
+file(GLOB sources CONFIGURE_DEPENDS ${CMAKE_CURRENT_SOURCE_DIR}/../../../src/cmds/greeter/*.cpp)
 
 add_executable(${PROJECT_NAME} ${sources})
 

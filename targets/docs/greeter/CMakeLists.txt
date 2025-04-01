@@ -4,7 +4,7 @@ project(GreeterDocs)
 
 # ---- Dependencies ----
 
-include(../../cmake/CPM.cmake)
+include(../../../cmake/CPM.cmake)
 
 CPMAddPackage("gh:mosra/m.css#a0d292ec311b97fefd21e93cdefb60f88d19ede6")
 CPMAddPackage(NAME Greeter SOURCE_DIR ${CMAKE_CURRENT_LIST_DIR}/..)
@@ -17,9 +17,9 @@ set(DOXYGEN_PROJECT_VERSION ${Greeter_VERSION})
 set(DOXYGEN_PROJECT_ROOT "${CMAKE_CURRENT_LIST_DIR}/..")
 set(DOXYGEN_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/doxygen")
 
-configure_file(${CMAKE_CURRENT_LIST_DIR}/../../doc/Doxyfile ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/../../../docs/greeter/Doxyfile ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
 
-configure_file(${CMAKE_CURRENT_LIST_DIR}/../../doc/conf.py ${CMAKE_CURRENT_BINARY_DIR}/conf.py)
+configure_file(${CMAKE_CURRENT_LIST_DIR}/../../../docs/greeter/conf.py ${CMAKE_CURRENT_BINARY_DIR}/conf.py)
 
 add_custom_target(
   GenerateDocs
