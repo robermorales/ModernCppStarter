@@ -37,6 +37,7 @@ auto main(int argc, char** argv) -> int {
 
   if (result["version"].as<bool>()) {
     std::cout << "Greeter, version " << GREETER_VERSION << std::endl;
+    std::cout << "C++ version " << __cplusplus << std::endl;
     return 0;
   }
 
